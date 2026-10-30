@@ -1,0 +1,29 @@
+
+name: My First GitHub Action
+
+# Trigger this workflow when code is pushed to main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  first-job:
+    name: Execute My First Operation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Welcome Message
+        run: echo "Hello! My first GitHub Action is running."
+
+      - name: Display Current Date
+        run: date
+
+      - name: Display Repository Files
+        run: ls -la
+
+      - name: Finish
+        run: echo "GitHub Action completed successfully!"
